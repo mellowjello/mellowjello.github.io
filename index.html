@@ -1,23 +1,378 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Dylan Flogaus</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Lora|Playball|Raleway|Roboto:700" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://use.fontawesome.com/95700c12b5.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="magnific-popup.css">
+<script src="js/jquery.magnific-popup.js"></script>
 
-<div class="home">
+  <style>
+  .typed-cursor{
+    font-size: 100px;
+    opacity: 1;
+    -webkit-animation: blink 0.9s infinite;
+    -moz-animation: blink 0.9s infinite;
+    animation: blink 0.9s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      background: rgba(54, 54, 54, .8);
+      border: none;
 
-  <h1 class="page-heading">Posts</h1>
+    }
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      padding: 25px;
+    }
+    body {
+      position: relative;
+    }
+  #section1 {padding-top:50px;height:705px;color: #fff;}
+  #section2 {/*padding-top:50px;height:900px;*/color: #000; background-color: #fff;}
+  #section3 {/*padding-top:50px;height:300px;*/color: #fff;}
+  #section4 {/*padding-top:50px;height:700px;*/color: #000; background-color: #fff;}
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+  .parallax {
+    /* The image used */
+    background-image: url("lib/back-img1.jpg");
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+    /* Set a specific height */
+    min-height: 100px;
 
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.jumbotron {
+   background: rgba(200, 54, 54, 0);
+}
+
+.btn {
+  background: none;
+  border-radius: 0;
+  color: white;
+  border-color: white;
+  border-width: 2px;
+  font-weight: 350;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 2px;
+  padding: 15px 20px;
+  text-transform: uppercase;
+
+}
+
+.btn:hover, .btn:focus, .btn:active, .btn:active:focus, .btn.active, .open>.dropdown-toggle.btn{
+  background: white;
+  color: black;
+}
+
+.btn.black {
+  border-radius: 0;
+  color: black;
+  border-color: black;
+  border-width: 2px;
+  font-weight: 350;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 2px;
+  padding: 15px 20px;
+  text-transform: uppercase;
+
+}
+
+.btn.black:hover, .btn.black:focus, .btn.black:active, .btn.black:active:focus, .btn.black.active, .open>.dropdown-toggle.btn.black{
+  background: black;
+  color: white;
+}
+
+p.grey {
+  font-family: 'Raleway', sans-serif;
+  color: #a1a1a1;
+}
+
+li.navstyle{
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 250;
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
+}
+
+.glyphicon{
+  font-size: 80px;
+  color: #333333;
+}
+
+.dipper{
+  opacity: 0;
+  transition: all 200ms ease-in;
+}
+
+.js-dipper-animate{
+  opacity: 1;
+}
+
+.button1{
+  margin-bottom: 17px;
+}
+
+.footinator{
+  color: #666;
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+}
+
+.footinator:hover, .footinator:focus, .footinator:active, .footinator:active:focus, .footinator.active, .open>.dropdown-toggle.footinator{
+  color: #e0e0e0;
+  text-decoration: none;
+}
+
+.icon {
+  color: #a1a1a1;
+  text-decoration: none;
+}
+
+.icon:hover, .icon:focus, .icon:active, .icon:active:focus, .icon.active, .open>.dropdown-toggle.icon{
+  color: #e0e0e0;
+  text-decoration: none;
+}
+  </style>
+</head>
+
+
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Dylan F.</a>
+      </div>
+      <div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li class="navstyle"><a href="#section1">Home</a></li>
+            <li class="navstyle"><a href="#section2">Gallery</a></li>
+            <li class="navstyle"><a href="#section3">Contact Me</a></li>
+            <li class="navstyle"><a href="#section4">Skills</a></li>
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+<!--end of navbar, beginning of sections-->
+
+<!-- section 1 --><div id="section1" class="parallax text-center" >
+    <br><br><br><br><br>
+    <div class="jumbotron">
+      <h1 class="col-xs-12 hidden-sm hidden-md hidden-lg" style="font-family: 'Roboto', sans-serif; font-weight: 700; letter-spacing: 4px; text-transform: uppercase;">rower. developer. student.</h1>
+      <div class="hidden-xs">
+      <span class="element hidden-xs" style="font-family: 'Roboto', sans-serif; font-weight: 700; font-size: 100px; letter-spacing: 4px; text-transform: uppercase;"></span>
+    </div><br>
+
+    <p style="font-family: 'Playball', cursive; font-size: 25px;">I'm a full time student and rower who is devoted to improving my community.</p>
+    <br>
+
+    <div class="row">
+      <div class="hidden-xs col-sm-6 col-md-6 col-lg-6 text-right">
+        <a href="https://new.berecruited.com/athletes/3518787" class="btn" role="button">Berecruited</a>
+      </div>
+      <div class="hidden-xs col-sm-6 col-md-6 col-lg-6 text-left">
+        <a href="mailto:dylan.flogaus@gmail.com"class="btn" role="button">Click to email</a>
+      </div>
+      <div class="col-xs-12 hidden-sm hidden-md hidden-lg button1">
+        <a href="https://new.berecruited.com/athletes/3518787" class="btn" role="button">Berecruited</a>
+      </div>
+      <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+        <a href="mailto:dylan.flogaus@gmail.com"class="btn" role="button">Click to email</a>
+      </div>
+  </div>
+  </div>
 </div>
+
+
+
+<!-- section2 --><div id="section2" class="container-fluid">
+<br>
+    <div class="container text-center popupgallery">
+  <h1  class="dipper" style="font-family: 'Lora', serif;">About Me.</h1><br>
+  <div class="row" style="font-family: 'Raleway', sans-serif; color:#333333;">
+    <div class="col-sm-4">
+      <a href="lib/img-1.jpg" title="I train at WYRA, a youth rowing program. (Wilmington, DE)"><img src="lib/img-1.jpg" width="350" height="250"></a>
+
+      <br><p class="grey">I train at WYRA, a youth rowing program.<br>(Wilmington, DE)</p>
+    </div>
+    <div class="col-sm-4">
+      <a href="lib/img-2.png" title="I've attended Craftsbury training summer camp. (Craftsbury, VT)"><img src="lib/img-2.png" width="350" height="250"></a>
+      <br><p class="grey">I've attended Craftsbury training summer camp.<br>(Craftsbury, VT)</p>
+    </div>
+    <div class="col-sm-4">
+      <a href="lib/img-3.jpg" title="I enjoy nature and getting outside. (Augusta, ME)"><img src="lib/img-3.jpg" width="350" height="250"></a>
+      <br><p class="grey">I enjoy nature and getting outside.<br>(Augusta, ME)</p>
+    </div>
+  </div>
+
+<br>
+
+  <div class="row " style="font-family: 'Raleway', sans-serif; color:#333333;">
+    <div class="col-sm-4">
+      <a href="lib/img-4.jpg" title="I've competed at Nationals twice. (Mercer, NJ)"><img src="lib/img-4.jpg" width="350" height="250"></a>
+      <br><p class="grey">I've competed at Nationals twice.<br>(Mercer, NJ)</p>
+    </div>
+    <div class="col-sm-4">
+      <a href="lib/img-5.jpg" title="My team is my second family. (Baltimore, MD)"><img src="lib/img-5.jpg" width="350" height="250"></a>
+      <br><p class="grey">My team is my second family.<br>(Baltimore, MD)</p>
+    </div>
+    <div class="col-sm-4">
+      <a href="lib/img-6.jpg" title="I am always competing. (Philadelphia, PA)"><img src="lib/img-6.jpg" width="350" height="250"></a>
+      <br><p class="grey">I am always competing.<br>(Philadelphia, PA)</p>
+    </div>
+  </div>
+</div>
+<div class="container text-center">
+<br>
+<p style="font-size: 20px;font-family: 'Lora', serif;">I would love to know more about you! Send me an email to find out more.</p>
+</div>
+<br><br><br>
+  </div>
+
+ <!-- section3 -->  <div id="section3" class="container-fluid parallax text-center">
+ <br><br><br><br><br><br>
+    <a href="mailto:dylan.flogaus@gmail.com" class="icon" style="font-size: 30px; font-family: 'Playball', cursive; text-decoration: none;" role="button">Contact me to find out more.</a>
+  <br><br><br><br><br><br>
+  </div>
+
+
+<!-- section4-1 -->  <div id="section4" class="container-fluid text-center">
+    <div class="container">
+      <br><br><br><br>
+      <h1 class=""style="font-family: 'Lora', serif;">Personal Achievements</h1> <br> <br> <br>
+      <div class="row ">
+
+        <div class="col-sm-4"style="margin-bottom: 40px;">
+          <i class="fa fa-graduation-cap fa-5x" style="color: #666;" aria-hidden="true"></i> <br> <br>
+          <h4 style="font-family: 'Lora', serif;">Academic Achievements</h4> <br>
+          <ul class="text-left"style="color: #a1a1a1;">
+            <li>I attend The Charter School of Wilmington, one of the top 10 high schools in the country.</li>
+            <li>I maintain a rigrous courseload.</li>
+            <li>I was nominated to represent Cab Calloway for the governor's school of excellence.</li>
+            <li>I recieved a score of 1310 on the PSAT</li>
+          </ul>
+        </div>
+        <div class="col-sm-4"style="margin-bottom: 40px;">
+          <i class="fa fa-trophy fa-5x" style="color: #666;" aria-hidden="true"></i><br> <br>
+          <h4 style="font-family: 'Lora', serif;">Athletic Achievements</h4> <br>
+          <ul class="text-left"style="color: #a1a1a1;">
+            <li>I Hold the record in the under 14 category at the Center City Slam indoor regatta.</li>
+            <li>I Won 1st place at the Main Line Slide (2014).</li>
+            <li>I Won Mercer Lake Sprints silver medal (V4+).</li>
+            <li>I Recieved 2014 US Rowing Mid-Atlantic Junior District Championships silver medal 8+.</li>
+            <li>I Won the 2015 and 2016 Mid-Atlantic youth championships (bronze and silver) in the Varsity lwt 4+.</li>
+            <li>I competed in the 2015 and 2016 Youth Nationals (Sarasota Fl, and Mercer, NJ) in the WYRA Varsity lwt 4+.</li>
+            <li>I Attended Craftsbury Training camp.</li>
+          </ul>
+        </div>
+        <div class="col-sm-4"style="margin-bottom: 40px;">
+          <i class="fa fa-users fa-5x" style="color: #666;" aria-hidden="true"></i><br> <br>
+          <h4 style="font-family: 'Lora', serif;">Communal Achievements</h4> <br>
+          <ul class="text-left"style="color: #a1a1a1;">
+            <li>I volunteer for up to 80 hours per summer to help teach inter-city kids the sport of rowing.</li>
+            <li>I periodically volunteer at the Food Bank of Delaware</li>
+            <li>I worked for a start-up company called "Beach Caddy"</li>
+            <li>I was accepted into the National Junior Honors Society.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <a href="#" class="btn black " role="button">Back to top</a>
+        </div>
+      </div>
+      <br><br><br>
+    </div>
+  </div>
+
+<!-- footer -->
+<footer class="container-fluid text-center" style="background-color: #222;">
+  <br><br>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-3">
+        <a class="footinator"href="#section1">HOME</a>
+      </div>
+      <div class="col-xs-3">
+        <a class="footinator"href="#section2">GALLERY</a>
+      </div>
+      <div class="col-xs-3">
+        <a class="footinator"href="#section3">CONTACT ME</a>
+      </div>
+      <div class="col-xs-3">
+        <a class="footinator"href="#section4">SKILLS</a>
+      </div>
+    </div>
+  </div>
+  <br><br>
+  <a class="footinator" href="mailto:dylan.flogaus@gmail.com" style="font-family: 'Lora', serif;"><p>Email me at: gmail@dylanflogaus.com</p></a>
+  <br>
+</footer>
+
+
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/waypoints.js"></script>
+<script src="js/typed.js"></script>
+<script>
+  $(function(){
+      $(".element").typed({
+          strings: ["Rower.", "Developer.", "Student."],
+          typeSpeed: 10
+      });
+  });
+</script>
+<script type="text/javascript">
+$('.popupgallery').magnificPopup({
+  type: 'image',
+  delegate: 'a',
+  closeOnContentClick: true,
+  image: {
+      verticalFit: false
+  }
+});
+</script>
+</body>
+</html>
